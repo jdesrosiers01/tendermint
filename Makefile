@@ -94,7 +94,7 @@ test_p2p:
 
 need_abci:
 	go get github.com/tendermint/abci || true
-	cd $GOPATH/src/github.com/tendermint/abci
+	cd $(GOPATH)/src/github.com/tendermint/abci
 	make get_vendor_deps
 	make install
 
