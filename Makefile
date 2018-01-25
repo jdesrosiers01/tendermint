@@ -92,11 +92,18 @@ test_p2p:
 	# requires 'tester' the image from above
 	bash test/p2p/test.sh tester
 
+need_abci:
+	go get github.com/tendermint/abci
+	cd $GOPATH/src/github.com/tendermint/abci
+	make get_vendor_deps
+	make install
+
 test_integrations:
 	make build_docker_test_image
 	make get_tools
 	make get_vendor_deps
 	make install
+	make need_abci
 	make test_cover
 	make test_apps
 	make test_persistence
