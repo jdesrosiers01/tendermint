@@ -93,7 +93,7 @@ test_p2p:
 	bash test/p2p/test.sh tester
 
 test_integrations:
-	make build_test_docker_image
+	make build_docker_test_image
 	make test_cover
 	make test_apps
 	make test_persistence
