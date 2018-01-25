@@ -94,6 +94,9 @@ test_p2p:
 
 test_integrations:
 	make build_docker_test_image
+	make get_tools
+	make get_vendor_deps
+	make install
 	make test_cover
 	make test_apps
 	make test_persistence
